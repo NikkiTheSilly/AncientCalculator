@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<!--           -->
+<!-- HAIL BORB -->
+<!--           -->
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <title>Clicker Heroes Optimizer</title>
+
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    
+    <link rel="stylesheet" href="light.css" id="theme-light" title="Light">
+    <link rel="stylesheet" href="dark.css"  id="theme-dark"  title="Dark">
+    <script>
+        // Set theme in the head to prevent flash of wrongly styled content
+        if (typeof(Storage) !== "undefined") {
+            if (localStorage.hasOwnProperty("theme")) {
+                var theme = localStorage["theme"];
+            }
+            
+            // Because of a bug in Chrome (regarding the dark theme)
+            // we first have to disable the chosen theme, then enable it
+            if (theme != "dark")
+            {
+                document.getElementById('theme-dark').disabled = true;
+            
+                document.getElementById('theme-light').disabled  = true;
+                document.getElementById('theme-light').disabled  = false;
+            } else {
+                document.getElementById('theme-light').disabled  = true;
+                
+                document.getElementById('theme-dark').disabled = true;
+                document.getElementById('theme-dark').disabled = false;
+            }
+        }
+    </script>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico"><link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png"><link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png"><link rel="manifest" href="assets/manifest.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="#fff"><meta name="application-name" content="kepow-clickerheroes"><link rel="apple-touch-icon" sizes="57x57" href="assets/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="assets/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="assets/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="assets/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="assets/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="assets/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="assets/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="assets/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="167x167" href="assets/apple-touch-icon-167x167.png"><link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon-180x180.png"><link rel="apple-touch-icon" sizes="1024x1024" href="assets/apple-touch-icon-1024x1024.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="kepow-clickerheroes"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/apple-touch-startup-image-640x1136.png"><link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="assets/apple-touch-startup-image-1136x640.png"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/apple-touch-startup-image-750x1334.png"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="assets/apple-touch-startup-image-1334x750.png"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/apple-touch-startup-image-1125x2436.png"><link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="assets/apple-touch-startup-image-2436x1125.png"><link rel="apple-touch-startup-image" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/apple-touch-startup-image-1170x2532.png"><link rel="apple-touch-startup-image" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="assets/apple-touch-startup-image-2532x1170.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/apple-touch-startup-image-828x1792.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="assets/apple-touch-startup-image-1792x828.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/apple-touch-startup-image-1242x2688.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="assets/apple-touch-startup-image-2688x1242.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/apple-touch-startup-image-1242x2208.png"><link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="assets/apple-touch-startup-image-2208x1242.png"><link rel="apple-touch-startup-image" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="assets/apple-touch-startup-image-1284x2778.png"><link rel="apple-touch-startup-image" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="assets/apple-touch-startup-image-2778x1284.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/apple-touch-startup-image-1536x2048.png"><link rel="apple-touch-startup-image" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="assets/apple-touch-startup-image-2048x1536.png"><link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/apple-touch-startup-image-1620x2160.png"><link rel="apple-touch-startup-image" media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="assets/apple-touch-startup-image-2160x1620.png"><link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/apple-touch-startup-image-1668x2388.png"><link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="assets/apple-touch-startup-image-2388x1668.png"><link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/apple-touch-startup-image-1668x2224.png"><link rel="apple-touch-startup-image" media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="assets/apple-touch-startup-image-2224x1668.png"><link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="assets/apple-touch-startup-image-2048x2732.png"><link rel="apple-touch-startup-image" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="assets/apple-touch-startup-image-2732x2048.png"><meta name="msapplication-TileColor" content="#fff"><meta name="msapplication-TileImage" content="assets/mstile-144x144.png"><meta name="msapplication-config" content="assets/browserconfig.xml"><link rel="yandex-tableau-widget" href="assets/yandex-browser-manifest.json"><script defer src="main-2ff68c15fd22873f3d6a.js"></script></head>
+<body>
+<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">Placeholder</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><i class="fa fa-times"></i></span>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="modal-btn" data-dismiss="modal">Got it</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container pt-3 pb-3">
+    <div class="row mb-3">
+        <div class="col-12">
+            <div class="card border-info">
+                <div class="card-header text-muted">
+                    Note
+                </div>
+                <div class="card-body">
+                    <p>
+                        The calculator assumes that you own Siyalatas for idle and hybrid builds, and Fragsworth for active builds.
+                    </p>
+                    <p>
+                        The source code can be found <a href="https://github.com/Beskhue/ClickerHeroesCalculator">here</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main class="row">
+        <div class="col-12 col-md-5">
+            <div class="card border-primary mb-3">
+                <div class="card-header text-muted">
+                    <div class="row">
+                        <div class="col">
+                            <span class="align-middle"><i class="fa fa-database mr-2"></i> Data</span>
+                        </div>
+                        <div class="col-auto-md">
+                            <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="collapse" data-target="#input-collapse" aria-expanded="false" aria-controls="input-collapse">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body collapse show" id="input-collapse">
+                    <div class="form-group">
+                        <label for="savedata">Paste your game file here:</label>
+                        <textarea class="form-control w-100" id="savedata" style="height: 80px" onclick="this.select()" autofocus></textarea>
+                        <button type="button" class="btn btn-outline-primary btn-block mt-3" id="import">
+                            <i class="fa fa-caret-right mr-2"></i>Import
+                        </button>
+                        <div class="panel-settings mt-3">
+                            <div class="form-check">
+                                <label class="form-check-label mb-2">
+                                    <input class="form-check-input" type="checkbox" id="addsouls">
+                                    Include souls gained after ascension
+                                </label>
+                                <label class="form-check-label mb-2">
+                                    <input class="form-check-input" type="checkbox" id="wep8k">
+                                    Best hero will be leveled beyond 8,000
+                                </label>
+                                <label class="form-check-label mb-2">
+                                    <input class="form-check-input" type="checkbox" id="scouts">
+                                    Best hero is an Ace Scout
+                                </label>
+                                <label class="form-check-label mb-2">
+                                    <input class="form-check-input" type="checkbox" id="copyancientlevels">
+                                    Copy ancient change to clipboard when selected
+                                </label>
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" id="displayadvancedconfiguration">
+                                    Display advanced configuration
+                                </label>
+                            </div>
+                            <hr>
+                            <fieldset class="form-group">
+                                <div class="form-check">
+                                    Build:
+                                    <label class="ml-2">
+                                        <input type="radio" name="buildmode" value="idle" checked="checked">
+                                        Idle
+                                    </label>
+                                    </span>
+                                
+                                    <label class="ml-2">
+                                        <input type="radio" name="buildmode" value="hybrid">
+                                        Hybrid
+                                    </label>
+                                
+                                    <label class="ml-2">
+                                        <input type="radio" name="buildmode" value="active">
+                                        Active
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <div id="hybridratiocontainer">
+                                <label for="hybridratio">Ratio Fragsworth/Siyalatas (default: 0.5)</label>
+                                <div>
+                                    <input id="hybridratio" data-slider-id="hybridratioSlider" type="text"
+                                           data-slider-step="0.05" data-slider-scale="logarithmic"
+                                           data-slider-ticks="[0.05, 0.1, 0.5, 1, 2, 3, 4, 5, 10, 20]"
+                                           data-slider-ticks-snap-bounds="0.05" value="0.5"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="advancedconfiguration" class="card border-primary mb-3">
+                <div class="card-header text-muted">
+                    <div class="row">
+                        <div class="col">
+                            <span class="align-middle"><i class="fa fa-sliders mr-2"></i> Advanced configuration</span>
+                        </div>
+                        <div class="col-auto-md">
+                            <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="collapse" data-target="#config-collapse" aria-expanded="false" aria-controls="config-collapse">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body collapse show" id="config-collapse">
+                    <div>
+                        <label for="revolcrate">
+                            Level Revolc<br>
+                            (0 = not at all, 1 = extremely)
+                        </label>
+                        <div>
+                            <input id="revolcrate" data-slider-id="revolcrateSlider" type="text"
+                                   data-slider-ticks="[0, 1]" data-slider-step="0.1" value="0.3"/>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div>
+                        <label for="skillancientsrate">
+                            Level skill ancients<br>
+                            (0 = not at all, 1 = extremely)
+                        </label>
+                        <div>
+                            <input id="skillancientsrate" data-slider-id="skillancientsrateSlider" type="text"
+                                   data-slider-ticks="[0, 1]" data-slider-step="0.1" value="0.1"/>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div>
+                        <label for="skillancientsrate">
+                            Calculator precision in significant digits<br>
+                            (low precision is quicker, high precision is more accurate)
+                        </label>
+                        <div>
+                            <input id="precision" data-slider-id="precisionSlider" type="text"
+                                   data-slider-ticks="[4, 35]" data-slider-scale="logarithmic"
+                                   data-slider-step="0.05" value="7"/>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="form-check">
+                        <label class="form-check-label mb-2">
+                            <input class="form-check-input" type="checkbox" id="keepsoulsforregilding">
+                            Reserve hero souls for regilding
+                        </label>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" id="ignoreminimizedancients">
+                            Ignore ancients that are minimized in-game
+                        </label>
+                    </div>
+                    <hr>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" id="collapseancienttableonsmallscreens">
+                            Collapse ancient table on small screens
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        Theme:
+                        <label class="ml-2">
+                            <input type="radio" name="theme" value="light" checked="checked">
+                            Light
+                        </label>
+                        <label class="ml-2">
+                            <input type="radio" name="theme" value="dark">
+                            Dark
+                        </label>
+                    </div>
+                    <hr>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" id="displaysavegamegeneration">
+                            Enable save-game generation
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-7">
+            <div id="generatedsavedatacontainer" class="card border-primary mb-3">
+                <div class="card-header text-muted">
+                    <div class="row">
+                        <div class="col">
+                            <span class="align-middle"><i class="fa fa-pencil mr-2"></i> Save-game output</span>
+                        </div>
+                        <div class="col-auto-md">
+                            <button class="btn btn-outline-secondary btn-sm" type="button" data-toggle="collapse" data-target="#savegame-collapse" aria-expanded="false" aria-controls="savegame-collapse">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body collapse show" id="savegame-collapse">
+                    <label for="generatedsavedata">Import this into Clicker Heroes:</label>
+                    <textarea class="form-control w-100" id="generatedsavedata" style="height: 80px" onclick="this.select()" autofocus></textarea>
+                    <div class="card border-warning mt-3">
+                        <div class="card-body">
+                            This experimental functionality is considered very cool.
+                            Always back up your original save-game in case of error.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="output" role="tabpanel">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#tab-ancients" data-toggle="tab" href="#tab-ancients" role="tab">Ancients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tab-outsiders" data-toggle="tab" href="#tab-outsiders" role="tab">Outsiders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tab-other" data-toggle="tab" href="#tab-other" role="tab">Other</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="tab-ancients">
+                        <div class="panel-heading"></div>
+                        <table id="ancienttbl" class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th class="col1 border-top-0"></th>
+                                    <th class="col2 border-top-0">Current</th>
+                                    <th class="col3 border-top-0">Goal</th>
+                                    <th class="col4 border-top-0">Change</th>
+                                    <th class="col5 border-top-0">Cost (HS)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="odd_row">
+                                    <th scope="row" class="col1">Hero Souls</th>
+                                    <td class="col2"><input type="text" id="soulsin" value="0" disabled></td>
+                                    <td class="col3"><span id="soulsgoal"></span></td>
+                                    <td class="col4"><span id="soulschange"></span></td>
+                                    <td class="col5"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <small id="calculationtime" class="text-muted"></small>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="tab-outsiders">
+                        <table id="outsidertbl" class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th class="border-top-0">Outsider</th>
+                                <th class="border-top-0">Current</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="tab-other">
+                        <table class="table table-striped">
+                            <tr>
+                                <td><label for="tp">Transcendent Power</label></td>
+                                <td><input type="text" id="tp" disabled></td>
+                            </tr>
+                            <tr>
+                                <td><label for="ascensionzone">Highest Zone Reached</label></td>
+                                <td><input type="text" id="ascensionzone" disabled></td>
+                            </tr>
+                            <tr>
+                                <td><label for="astotal">Ancient Souls Total</label></td>
+                                <td><input type="text" id="astotal" disabled></td>
+                            </tr>
+                            <tr>
+                                <td><label for="gilds">Number of Gilds</label></td>
+                                <td><input type="text" id="gilds" disabled></td>
+                            </tr>
+                        </table>
+
+                        <div class="as-planner">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th class="col1">Gain</th>
+                                    <th class="col2">By sacrificing a total of</th>
+                                    <th class="col3">Change</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>0 AS</td>
+                                    <td>0 HS</td>
+                                    <td>0 HS</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="row">
+        <div class="col-12">
+            <div role="tabpanel" id="about">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#tab-about" aria-controls="tab-about" role="tab" data-toggle="tab">About</a>
+                    </li>                        
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tab-faq" aria-controls="tab-faq" role="tab" data-toggle="tab">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tab-changelog" aria-controls="tab-changelog" role="tab" data-toggle="tab">Changelog</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active p-3" id="tab-about">
+                        <p>
+                            <em>A calculator for Clicker Heroes, by <a
+                                    href="https://www.reddit.com/u/beskhue">/u/beskhue</a>. Modified by Nikki and zuils, with assistance from tcogtgoixn and Jehare.</em>
+                        </p>
+                        <p>
+                            This calculator uses the <em><a
+                                href="https://www.reddit.com/r/ClickerHeroes/comments/4naohc/math_and_transcendance/">Rules
+                            of Thumb</a></em> to offer ancient suggestions. The calculator distributes the available
+                            hero souls among the available ancients.
+                        </p>
+                        <p>
+                            See also: <a href="https://www.reddit.com/user/Shruikan864">/u/Shruikan864</a>'s <a
+                                href="https://www.reddit.com/r/ClickerHeroes/comments/4nox6i/rules_of_thumb_10_spreadsheet/">Rules
+                            of Thumb 1.0 Spreadsheet</a> and <a
+                                href="https://www.reddit.com/user/sugima">/u/sugima</a>'s
+                            <a href="https://www.reddit.com/r/ClickerHeroes/comments/4naohc/math_and_transcendance/">1.0
+                                Rules of Thumb</a>.
+                        </p>
+                        <p>
+                            Data structure is loosely based on the code by <a
+                                href="https://philni.neocities.org/ancientssoul.html">/u/philni</a>, which is based
+                            on
+                            the code by <a
+                                href="https://s3-us-west-2.amazonaws.com/clickerheroes/ancientssoul.html">/u/rler</a>,
+                            which in turn was based on the original calculator and source from <a
+                                href="http://www.rivsoft.net/clicker/ancientssoul">rivsoft</a>.
+                            Visit <a href="https://www.reddit.com/r/clickerheroes">/r/clickerheroes</a> for more
+                            info.
+                        </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane p-3" id="tab-faq">
+                        <h3>What is the easiest method to level ancients?</h3>
+                        <p>If you press on the number in the <em>change</em> field, the number changes to a long
+                            format
+                            and is automatically selected for copying. If you hold &quot;v&quot; when clicking on
+                            the
+                            corresponding ancient's purchase button, an input field will pop up. Paste the number
+                            you
+                            just copied into this field, and press &quot;Ok&quot;.</p>
+
+                        <h3>Why does the calculator tell me to level Morgulis more than I am able to?</h3>
+                        <p>It probably doesn't. If you have the outsider Chor'gorloth leveled, all ancients become
+                            cheaper, including Morgulis. This means that one level in Morgulis costs less than one
+                            soul
+                            when buying in bulk.</p>
+
+                        <h3>After buying the recommended ancients, why do I have more souls left over than the
+                            calculator predicts?</h3>
+                        <p>Firstly, when you have many souls to spend the calculator will over-estimate the cost of
+                            a
+                            few ancients with a &quot;difficult&quot; cost formula. This approximation is accurate
+                            enough to yield very good recommendations; calculating it precisely often does not
+                            actually
+                            make a difference in regard to the number of levels recommended. Only the predicted cost
+                            becomes more accurate. Secondly, when you have only few souls to spend the predicted
+                            cost is
+                            accurate as far as the cost formulae go; there appear to be some issues in-game where an
+                            ancient sometimes costs one soul less or more than it should.</p>
+
+                        <h3>What does this &quot;best hero will be leveled beyond 8,000&quot; mean?</h3>
+                        <p>Level 8,000 is the last level where heroes before Xavira get a x10 multiplier to their damage. After
+                            level 
+                            8,000 their damage increase factor is reduced. This affects the optimal distribution of
+                            ancient levels. If you level a hero beyond level 8,000 and cannot afford a better hero
+                            that
+                            has a lower level, then check this box.
+                            
+                            Similarly, the &quot;best hero is an Ace Scout&quot; box should be checked if the strongest hero
+                            you expect to use in the transcension is Rose, Sophia, Blanche, or Dorothy. The different damage
+                            and cost scaling of the Ace Scouts affects the optimal ancient distribution.</p>
+
+                        <h3>What hybrid ratio should I go with?</h3>
+                        <p>Strongly favour active - a ratio of 20 is generally recommended.
+                            Hybrid builds are used almost exclusively for timelapses at zones 50k - 250k and 1m+.
+                            Once these timelapses are done, your damage from idle is negligible compared to active, regardless
+                            of what hybrid ratio you use. A higher investment in active will allow you to reach a higher zone
+                            in your ascension, gaining more HS and therefore more progress for your next ascension.</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="tab-changelog">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th class="border-top-0">Date</th>
+                                <th class="border-top-0">Change</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>2025/10/19</td>
+                                <td>Improved ancient suggestions for when the Ace Scouts are the strongest heroes.</td>
+                            </tr>
+                            <tr>
+                                <td>2025/10/16</td>
+                                <td>Fixed a bug where Nogardnit was treated as an active ancient in Hybrid builds.</td>
+                                <td>2022/10/05</td>
+                                <td>Add support for ClickerHeroes' Unity save format. Thanks <a href="https://github.com/zuils10">zuils10</a>!</td>
+                            </tr>
+                            <tr>
+                                <td>2019/05/18</td>
+                                <td>Update Kumawakamaru's level cap for version 1.0e11.</td>
+                            </tr>
+                            <tr>
+                                <td>2018/12/16</td>
+                                <td>Slight layout changes and under-the-hood updates.</td>
+                            </tr>
+                            <tr>
+                                <td>2018/01/29</td>
+                                <td>Implement hard level cap for capped ancients.</td>
+                            </tr>
+                            <tr>
+                                <td>2017/11/18</td>
+                                <td>Allow selection of desired calculator precision.</td>
+                            </tr>
+                            <tr>
+                                <td>2017/11/18</td>
+                                <td>Add a dark theme.</td>
+                            </tr>
+                            <tr>
+                                <td>2017/11/18</td>
+                                <td>Make save-game generation publicly available.</td>
+                            </tr>
+                            <tr>
+                                <td>2017/11/18</td>
+                                <td>Improve layout.</td>
+                            </tr>
+                            <tr>
+                                <td>2017/11/17</td>
+                                <td>Add Pluto.</td>
+                            </tr>
+                            <tr>
+                                <td>2017/07/22</td>
+                                <td>Prepare for upcoming new save game encodings.</td>
+                            </tr>
+                            <tr>
+                                <td>2017/05/08</td>
+                                <td>Improved layout and added support for small screen sizes. Thanks <a href="https://github.com/Stuffbutts">Stuffbutts</a>!</td>
+                            </tr>
+                            <tr>
+                                <td>2017/03/24</td>
+                                <td>Added option to ignore ancients that are minimized in the game. Thanks <a
+                                        href="https://www.reddit.com/user/homernh">homernh</a>!
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2017/02/16</td>
+                                <td>Support some older browsers.</td>
+                            </tr>
+                            <tr>
+                                <td>2017/02/07</td>
+                                <td>Removed the unnecessary &quot;update&quot; button. Changing a setting already
+                                    automatically triggered an update.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2017/01/26</td>
+                                <td>Added ancient soul planner.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/12/16</td>
+                                <td>Make optimization process adaptive to make optimization quicker.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/12/16</td>
+                                <td>Add support for very big numbers.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/12/09</td>
+                                <td>Add advanced configuration options: leveling the auxiliary ancients and
+                                    reserving
+                                    hero souls for regilding.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2016/12/08</td>
+                                <td>Add ability to copy suggested ancient level changes directly to the clipboard.
+                                    Thanks <a href="https://github.com/emiln">emiln</a>!
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2016/12/01</td>
+                                <td>Improve data model.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/11/17</td>
+                                <td>Add Nogardnit.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/07/26</td>
+                                <td>Improve suggestions for the case where Wepwawet will be leveled beyond level
+                                    8,000.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2016/07/02</td>
+                                <td>Add FAQ.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/07/01</td>
+                                <td>Add adjustable hybrid ratio.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/06/20</td>
+                                <td>Implemented much better cost approximation.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/06/20</td>
+                                <td>Implemented quicker and more precise formulae.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/06/17</td>
+                                <td>Update rule for Kumawakamaru.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/06/16</td>
+                                <td>Display TP reward cap zone.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/06/16</td>
+                                <td>Remove Solomon leveling at TP cap based on new calculations.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/06/16</td>
+                                <td>Implemented Solomon leveling at TP cap.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/06/16</td>
+                                <td>Support Atman and Kumawakamaru pre-transcendence (note that optimal RoTs still
+                                    need
+                                    to be devised for these ancients).
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2016/06/16</td>
+                                <td>Add method to underlevel Solomon.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/06/16</td>
+                                <td>Solomon calculation is now correct pre-transcendence.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/06/15</td>
+                                <td>Implement easier copying of ancient level changes.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/06/15</td>
+                                <td>If Morgulis is not owned, keep a soul bank.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/06/15</td>
+                                <td>Further improvements to optimization speed. Notably, optimization (for high HS)
+                                    now
+                                    runs in constant time.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2016/06/15</td>
+                                <td>Now correctly takes into account HS requirement to upgrade Siyalatas.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/06/15</td>
+                                <td>Optimization when there are a lot of HS to distribute is now significantly
+                                    faster.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2016/06/14</td>
+                                <td>Added support for hybrid and active builds.</td>
+                            </tr>
+                            <tr>
+                                <td>2016/06/14</td>
+                                <td>Initial release.</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-45620982-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>
