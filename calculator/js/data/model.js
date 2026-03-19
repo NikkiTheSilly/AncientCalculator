@@ -14,6 +14,10 @@ var EmptyExtraInfo = {
 // Base level for idle: Siyalatas' level
 // Base level for hybrid: Siyalatas' level
 // Base level for active: Fragsworth's level
+const TsuchiGoldRatio = 0.2*Math.sqrt((ln(4))/ln(1.07))
+const e10GoldRatio = 0.2*Math.sqrt((ln(4.5)/ln(1.07)))
+const ScoutsGoldRatio = 0.2*Math.sqrt((ln(1000)/ln(1.22)))
+
 var AncientsExtraInfo = {
     "solomon": { // Both
         "goalIdle": function (baseLevel, oldLevel, alpha, transcended, heroTypeSelected, hybridRatio) {
@@ -61,11 +65,11 @@ var AncientsExtraInfo = {
             if (heroTypeSelected == "base") {
                 return baseLevel.times(0.9262);
             } else if (heroTypeSelected == "e9") {
-                return baseLevel.times(0.9053);
+                return baseLevel.times(TsuchiGoldRatio);
             } else if (heroTypeSelected == "e10") {
-                return baseLevel.times(0.943);
+                return baseLevel.times(e10GoldRatio);
             } else {
-                return baseLevel.times(1.1788);
+                return baseLevel.times(ScoutsGoldRatio);
             }
         },
         "goalHybrid": "goalIdle",
@@ -78,11 +82,11 @@ var AncientsExtraInfo = {
             if (heroTypeSelected == "base") {
                 return baseLevel.times(0.9262);
             } else if (heroTypeSelected == "e9") {
-                return baseLevel.times(0.9053);
+                return baseLevel.times(TsuchiGoldRatio);
             } else if (heroTypeSelected == "e10") {
-                return baseLevel.times(0.943);
+                return baseLevel.times(e10GoldRatio);
             } else {
-                return baseLevel.times(1.1788);
+                return baseLevel.times(ScoutsGoldRatio);
             }
         },
         "goalHybrid": "goalIdle",
@@ -95,11 +99,11 @@ var AncientsExtraInfo = {
             if (heroTypeSelected == "base") {
                 return baseLevel.times(0.9262);
             } else if (heroTypeSelected == "e9") {
-                return baseLevel.times(0.9053);
+                return baseLevel.times(TsuchiGoldRatio);
             } else if (heroTypeSelected == "e10") {
-                return baseLevel.times(0.943);
+                return baseLevel.times(e10GoldRatio);
             } else {
-                return baseLevel.times(1.1788);
+                return baseLevel.times(ScoutsGoldRatio);
             }
         },
         "goalHybrid": "goalIdle",
@@ -114,11 +118,11 @@ var AncientsExtraInfo = {
             if (heroTypeSelected == "base") {
                 return baseLevel.times(0.9262);
             } else if (heroTypeSelected == "e9") {
-                return baseLevel.times(0.9053);
+                return baseLevel.times(TsuchiGoldRatio);
             } else if (heroTypeSelected == "e10") {
-                return baseLevel.times(0.943);
+                return baseLevel.times(e10GoldRatio);
             } else {
-                return baseLevel.times(1.1788);
+                return baseLevel.times(ScoutsGoldRatio);
             }
         },
         "exclude": null
